@@ -1,0 +1,130 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<style>
+
+.city
+{
+float: left;
+margin: 10px;
+padding: 10px;
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<!--Code For Validation-->
+
+<script type="text/javascript">  
+function validate()
+{ 
+var contact=document.f1.contact.value; 
+var email=document.f1.email.value;
+var name=document.f1.name.value;  
+var passwordlength=document.f1.password.value.length;  
+var cpassword=document.f1.cpassword.value;  
+var password=document.f1.password.value;  
+var status=false;  
+
+if(name=="")
+{  
+document.getElementById("namelocation").innerHTML=  
+"Please enter your name";  
+status=false;
+}
+else
+{  
+document.getElementById("namelocation").innerHTML="";  
+status=true;
+}  
+ 
+if(contact=="")
+{  
+document.getElementById("conlocation").innerHTML=  
+"Please enter your Number";  
+status=false;
+}
+else
+{  
+document.getElementById("conlocation").innerHTML="";  
+status=true;
+}
+
+if(email=="")
+{  
+document.getElementById("eidlocation").innerHTML=  
+"Please enter your E-Mail";  
+status=false;
+}
+else
+{  
+document.getElementById("eidlocation").innerHTML="";  
+status=true;
+} 
+
+if(passwordlength<6)
+{  
+document.getElementById("passwordlocation").innerHTML=  
+"Password must be greater than 6";  
+status=false; 
+}
+else
+{  
+document.getElementById("passwordlocation").innerHTML="";  
+}  
+
+if(cpassword == password)
+{
+document.getElementById("cpasswordlocation").innerHTML="";  
+}  
+else
+{
+document.getElementById("cpasswordlocation").innerHTML=  
+"Password does not match";  
+status=false; 
+}
+
+return status;  
+}  
+</script>
+
+<!--Validation Code Ends Here-->
+
+<div class="city">  
+<table border="0" width="100%" bgcolor="white" align="center" style="height: 100px">
+<form name="f1" onsubmit="return validate()" align="center">  
+<tr>
+	<td>Name:</td>
+	<td><input type="text" name="name"/>  
+	<span id="namelocation" style="color:red"></span></td>
+</tr>
+<tr>
+	<td>Number:</td>
+	<td><input type="text" name="contact"/>  
+	<span id="conlocation" style="color:red"></span></td>
+</tr> 
+<tr>
+	<td>E-Mail Id:</td>
+	<td><input type="text" name="email"/>
+	<span id="eidlocation" style="color:red"></span></td>
+</tr>
+<tr>
+	<td>Password:</td>
+	<td><input type="password" name="password"/>  
+	<span id="passwordlocation" style="color:red"></span></td>
+</tr>
+<tr>
+	<td>Confirm Password:</td>
+	<td><input type="password" name="cpassword"/>  
+	<span id="cpasswordlocation" style="color:red"></span></td>
+</tr>
+<tr>
+	<td colspan="2"><input type="submit" value="Register"/></td>
+	<td colspan="0"><input type="reset" value="Reset"/></td>
+</tr>
+</form>
+</table>
+</div>  
+</body>
+</html>
